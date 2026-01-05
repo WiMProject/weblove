@@ -1,24 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { MASCOT_PHRASES } from '../constants';
 import { Heart } from 'lucide-react';
-
-// Fix: Declare lottie-player for TypeScript by augmenting both global JSX and React.JSX namespaces
-// to ensure compatibility with different React versions and JSX transform configurations.
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'lottie-player': any;
-    }
-  }
-  namespace React {
-    namespace JSX {
-      interface IntrinsicElements {
-        'lottie-player': any;
-      }
-    }
-  }
-}
 
 const LoveMascot: React.FC = () => {
   const [bubbleText, setBubbleText] = useState("Hai Sayang! 👋");
@@ -66,6 +48,7 @@ const LoveMascot: React.FC = () => {
         className={`pointer-events-auto transition-all duration-500 relative flex items-center justify-center ${isAnimating ? 'scale-125' : 'hover:scale-110 active:scale-95'}`}
       >
         <div className="w-24 h-24 md:w-32 md:h-32 flex items-center justify-center relative">
+          {/* @ts-ignore */}
           <lottie-player
             src={lottiePath}
             background="transparent"

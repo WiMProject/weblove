@@ -1,22 +1,4 @@
-
 import React from 'react';
-
-// Fix: Declare lottie-player for TypeScript by augmenting both global JSX and React.JSX namespaces
-// to ensure compatibility with different React versions and JSX transform configurations.
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'lottie-player': any;
-    }
-  }
-  namespace React {
-    namespace JSX {
-      interface IntrinsicElements {
-        'lottie-player': any;
-      }
-    }
-  }
-}
 
 const LoveIntroAnimation: React.FC = () => {
   // Path file JSON Lottie yang diberikan user
@@ -32,6 +14,7 @@ const LoveIntroAnimation: React.FC = () => {
       
       {/* Lottie Animation Container */}
       <div className="relative z-10 w-full h-full flex items-center justify-center scale-110 md:scale-125">
+        {/* @ts-ignore */}
         <lottie-player
           src={lottiePath}
           background="transparent"

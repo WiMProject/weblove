@@ -13,6 +13,7 @@ import LoveBattery from './components/LoveBattery';
 import MemoriesSlider from './components/MemoriesSlider';
 import MusicPlayer from './components/MusicPlayer';
 import SharedNotes from './components/SharedNotes';
+import DreamSection from './components/DreamSection';
 import { CUTE_PHRASES, RELATIONSHIP_START_DATE } from './constants';
 import { recordActionToBackend } from './services/geminiService';
 
@@ -176,6 +177,9 @@ const App: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Dreams & Vision Board Section */}
+        <DreamSection />
 
         {/* Notes Section */}
         <SharedNotes />
